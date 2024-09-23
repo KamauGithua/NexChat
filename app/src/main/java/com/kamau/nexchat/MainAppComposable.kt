@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kamau.nexchat.feature.auth.signin.SignInScreen
 import com.kamau.nexchat.feature.auth.signup.SignUpScreen
+import com.kamau.nexchat.feature.home.HomeScreen
 
 @Composable
 fun MainApp() {
@@ -23,6 +24,9 @@ fun MainApp() {
             }
             composable("signup"){
                 SignUpScreen(navController)
+            }
+            composable("home"){
+                HomeScreen(navController)
             }
     }
 

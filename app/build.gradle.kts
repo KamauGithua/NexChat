@@ -5,7 +5,6 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     id("com.google.firebase.crashlytics")
-//    id("com.google.firebase.crashlytics")
 
 }
 
@@ -78,12 +77,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
-//    implementation(libs.firebase.crashlytics)
-//    implementation(libs.firebase.analytics)
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.android.compiler)
+
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
     implementation(libs.coil)
-//    implementation(libs.google.firebase.analytics)
     implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
     implementation("com.google.firebase:firebase-crashlytics")
     implementation("com.google.firebase:firebase-analytics")
