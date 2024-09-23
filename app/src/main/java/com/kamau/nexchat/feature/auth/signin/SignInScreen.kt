@@ -70,7 +70,7 @@ fun SignInScreen(navController: NavController){
             Button(onClick = { /*TODO*/ }, modifier = Modifier.fillMaxWidth()) {
                 Text(text = "Sign In")
             }
-            TextButton(onClick = { /*TODO*/ }) {
+            TextButton(onClick = { navController.navigate("signup") }) {
                 Text(text = "Don't have an account? Sign Up")
             }
         }
