@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.google.gms.google.services)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.firebase.crashlytics")
+//    id("com.google.firebase.crashlytics")
 
 }
 
@@ -44,12 +46,15 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    kapt {
+        correctErrorTypes = true
     }
 }
 
@@ -73,16 +78,18 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
-
-        implementation("com.google.firebase:firebase-crashlytics:18.4.1")
-        implementation("com.google.firebase:firebase-analytics:21.2.0")
-    implementation("io.coil-kt:coil:2.3.0")
-//    implementation(libs.coil)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+//    implementation(libs.firebase.crashlytics)
+//    implementation(libs.firebase.analytics)
+    implementation(libs.coil)
+//    implementation(libs.google.firebase.analytics)
     implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+    implementation("com.google.firebase:firebase-crashlytics")
     implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.firebase:firebase-database")
-    implementation("com.google.firebase:firebase-storage")
+
+    implementation(libs.google.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
+
 }
