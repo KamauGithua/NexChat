@@ -1,4 +1,8 @@
 package com.kamau.nexchat
 
-class Nexchat {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class Nexchat: Application() {
 }

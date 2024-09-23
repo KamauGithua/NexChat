@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.kamau.nexchat.feature.auth.signin.SignInScreen
 import com.kamau.nexchat.feature.auth.signup.SignUpScreen
 import com.kamau.nexchat.feature.home.HomeScreen
@@ -18,7 +19,9 @@ fun MainApp() {
             .fillMaxSize()
     ) {
         val navController = rememberNavController()
-        NavHost(navController = navController, startDestination = "login"){
+        val currentUser = FirebaseAuth.getInstance().currentUser
+         val start = if (currentUser != null) "home" else "login"
+        NavHost(navController = navController, startDestination = start){
             composable("login"){
                 SignInScreen(navController)
             }

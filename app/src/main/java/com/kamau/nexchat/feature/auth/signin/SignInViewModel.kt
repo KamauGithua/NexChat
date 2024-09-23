@@ -5,13 +5,14 @@ import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
 
 @HiltViewModel
-class SignInViewModel : ViewModel() {
+class SignInViewModel @Inject constructor() : ViewModel() {
     private val _state = MutableStateFlow<SignInState>(SignInState.Nothing)
     val state = _state.asStateFlow()
 
-    fun SignIn(email: String, password: String){
+    fun signIn(email: String, password: String){
         _state.value = SignInState.Loading
         // Firebase signIn
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
