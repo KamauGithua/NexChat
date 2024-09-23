@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "368819763098",
+    "project_id": "nexchat-c2b95",
+    "storage_bucket": "nexchat-c2b95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368819763098:android:f3308eb1d49523e784ec23",
+        "android_client_info": {
+          "package_name": "com.kamau.nexchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtv4wPtl7o_vJkbe_m4j27AdqNGcvYVOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
