@@ -111,7 +111,9 @@ fun SignUpScreen(navController: NavController){
                 isError = password.isNotEmpty() && confirm.isNotEmpty() && password != confirm,
                 label = { Text(text = " Confirm Password") }
             )
+
             Spacer(modifier = Modifier.size(16.dp))
+
             if (uiState.value == SignUpState.Loading) {
                 CircularProgressIndicator()
             } else {

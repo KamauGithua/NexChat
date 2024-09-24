@@ -35,6 +35,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.kamau.nexchat.R
+import com.kamau.nexchat.feature.auth.signup.SignUpState
 
 @Composable
 fun SignInScreen(navController: NavController){
@@ -95,8 +96,7 @@ fun SignInScreen(navController: NavController){
 
             if (uiState.value == SignInState.Loading){
                 CircularProgressIndicator()
-            }
-            else {
+            } else {
                 Button(
                     onClick = { viewModel.signIn(email, password) },
                     modifier = Modifier.fillMaxWidth(),
@@ -108,10 +108,11 @@ fun SignInScreen(navController: NavController){
                     Text(text = "Don't have an account? Sign Up")
                 }
             }
+
+            }
         }
     }
 
-}
 @Preview(showBackground = true)
 @Composable
 fun PreviewSignInScreen(){
